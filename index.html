@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11152f">
+  <title>EasyStudy — Estudiar nunca fue tan fácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">✦</span><span>Easy<span>Study</span></span></a>
+    <nav><a href="#como-funciona">Cómo funciona</a><a href="#herramientas">Herramientas</a></nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">☾</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> TU COMPAÑERO DE ESTUDIO CON IA</div>
+      <h1>Aprender puede ser<br><span>mucho más fácil.</span></h1>
+      <p class="hero-copy">Convertí cualquier tema en un resumen claro y preparate para tu próximo examen.</p>
+
+      <section class="generator panel" aria-label="Generador de resúmenes">
+        <label for="topic">¿Qué tema querés estudiar?</label>
+        <textarea id="topic" rows="2" placeholder="Ej. La Revolución Francesa, el sistema digestivo..."></textarea>
+        <div class="controls">
+          <div class="field">
+            <label for="level">Nivel educativo</label>
+            <select id="level"><option>Primaria</option><option selected>Secundaria</option><option>Avanzado</option></select>
+          </div>
+          <div class="field">
+            <label for="length">Extensión</label>
+            <select id="length"><option value="corto">Corto</option><option value="mediano" selected>Mediano</option><option value="detallado">Completo</option></select>
+          </div>
+        </div>
+        <button class="primary-btn" id="makeSummary"><span>✦</span> Generar mi resumen</button>
+        <p class="small-note">Explicaciones claras, organizadas y fáciles de repasar.</p>
+      </section>
+    </section>
+
+    <section class="results hidden" id="results">
+      <div class="result-heading"><div><div class="eyebrow">TU MATERIAL DE ESTUDIO</div><h2 id="resultTitle">Tu resumen</h2></div><button class="ghost-btn" id="copySummary">Copiar</button></div>
+      <article class="panel output" id="summaryOutput"></article>
+      <div class="result-actions">
+        <button class="primary-btn" id="makeQuiz">✎ Hacer mini examen</button>
+        <button class="secondary-btn" id="saveSummary">♡ Guardar resumen</button>
+      </div>
+      <section class="panel quiz hidden" id="quiz">
+        <div class="quiz-top"><div><div class="eyebrow">PONÉ A PRUEBA LO QUE SABÉS</div><h3>Mini examen</h3></div><span class="counter" id="quizCounter"></span></div>
+        <div id="quizContent"></div>
+        <div class="quiz-footer"><button class="primary-btn" id="nextQuestion">Siguiente pregunta</button></div>
+        <div id="quizScore" class="score hidden"></div>
+      </section>
+    </section>
+
+    <section class="tools-section" id="herramientas">
+      <div class="eyebrow">TODO EN UN SOLO LUGAR</div><h2>Tu forma de estudiar,<br><span>a tu manera.</span></h2>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon purple">✦</div><h3>Resúmenes inteligentes</h3><p>Ideas principales explicadas con palabras sencillas.</p></article>
+        <article class="feature-card"><div class="feature-icon blue">✓</div><h3>Mini exámenes</h3><p>Practicá con preguntas y recibí tu puntaje al terminar.</p></article>
+        <article class="feature-card"><div class="feature-icon pink">▤</div><h3>Material guardado</h3><p>Conservá tus resúmenes para volver a repasarlos.</p></article>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-funciona">
+      <div class="eyebrow">SIMPLE Y PRÁCTICO</div><h2>Tres pasos para aprender mejor.</h2>
+      <div class="steps"><div><b>01</b><h3>Escribí un tema</h3><p>Elegí qué necesitás estudiar.</p></div><div><b>02</b><h3>Generá tu resumen</h3><p>EasyStudy organiza la información.</p></div><div><b>03</b><h3>Practicá</h3><p>Respondé preguntas y revisá tu resultado.</p></div></div>
+    </section>
+
+    <section class="saved-section hidden" id="savedSection"><h2>Mis resúmenes guardados</h2><div id="savedList"></div></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-icon">✦</span><span>Easy<span>Study</span></span></a><p>Estudiar nunca fue tan fácil.</p></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
